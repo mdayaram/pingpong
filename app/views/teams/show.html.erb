@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @team.name %>
+</p>
+
+<p>
+  <b>Members:</b>
+  <%= @team.members %>
+</p>
+
+<p>
+  <b>Bio:</b>
+  <%= @team.bio %>
+</p>
+
+<p>
+  <b>Smack:</b>
+  <%= @team.smack %>
+</p>
+
+<p>
+  <b>League:</b>
+  <%= @team.league %>
+</p>
+
+<p>
+  <b>Win:</b>
+  <img src="<%= @team.win_img %>"/>
+</p>
+
+<p>
+  <b>Lose:</b>
+  <img src="<%= @team.lose_img %>"/>
+</p>
+
+<p>
+  <b>Trash Talker:</b>
+  <img src="<%= @team.smack_img %>"/>
+</p>
+
+
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>
