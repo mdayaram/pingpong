@@ -29,17 +29,26 @@
   <% end %>
 
   <div class="field">
+    <%= f.label "Smack Talk" %><br />
+    <%= f.text_field :smack %>
+  </div>
+  <div class="field">
     <%= f.label :bio %><br />
     <%= f.text_area :bio %>
   </div>
-  <div class="field">
-    <%= f.label :smack %><br />
-    <%= f.text_field :smack %>
-  </div>
+
+  <% if admin_signed_in? %>
   <div class="field">
     <%= f.label :league %><br />
     <%= f.text_field :league %>
   </div>
+  <% else %>
+  <div class="field">
+    <%= f.label :league %><br />
+    <%= f.text_field :league, :disabled => true %>
+  </div>
+	<% end %>
+
   <div class="field">
     <%= f.label :smack_img %><br />
     <%= f.text_field :smack_img %>

@@ -4,8 +4,8 @@ class TeamsController < ApplicationController
   # GET /teams.json
   def index
     @serious = Team.where(:league => "serious")
-		@fun = Team.where(:league => "fun")
-		@doubles = Team.where(:league => "doubles")
+    @fun = Team.where(:league => "fun")
+    @doubles = Team.where(:league => "doubles")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -60,8 +60,9 @@ class TeamsController < ApplicationController
   # PUT /teams/1.json
   def update
     @team = Team.find(params[:id])
-    # Don't allow update of members.
+    # Don't allow update of members or league.
     params[:team].delete(:members)
+    params[:team].delete(:league)
 
     respond_to do |format|
       if @team.update_attributes(params[:team])
