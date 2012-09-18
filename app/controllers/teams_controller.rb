@@ -3,11 +3,13 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
-    @teams = Team.all
+    @serious = Team.where(:league => "serious")
+		@fun = Team.where(:league => "fun")
+		@doubles = Team.where(:league => "doubles")
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @teams }
+      format.json { render json: [@serious, @fun, @doules] }
     end
   end
 
