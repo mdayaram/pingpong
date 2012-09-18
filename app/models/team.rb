@@ -1,5 +1,5 @@
 class Team < ActiveRecord::Base
-	before_save :default_values
+	before_validation :default_values
 	attr_accessible :bio, :members, :name, :smack, :league
 	attr_accessible :lose_img, :win_img, :smack_img
 

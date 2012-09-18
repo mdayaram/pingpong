@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+  before_filter :authenticate_admin!, :only => [:new, :create, :destroy] 
   # GET /teams
   # GET /teams.json
   def index
@@ -57,6 +58,8 @@ class TeamsController < ApplicationController
   # PUT /teams/1.json
   def update
     @team = Team.find(params[:id])
+    # Don't allow update of members.
+    params[:team].delete(:members)
 
     respond_to do |format|
       if @team.update_attributes(params[:team])
