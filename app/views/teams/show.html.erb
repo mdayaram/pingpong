@@ -1,45 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @team.name %>
-</p>
+<center>
+<h1><%= @team.league.capitalize %> :: <%= @team.name %></h1>
 
+<img src="<%= @team.smack_img %>"/>
+<p><i><%= @team.smack %></i></p>
+
+
+<table>
+<tr><td>
 <p>
   <b>Members:</b>
   <%= @team.members %>
 </p>
-
+</td></tr>
+<tr><td>
 <p>
   <b>Bio:</b>
   <%= @team.bio %>
 </p>
+</td></tr>
+</table>
 
-<p>
-  <b>Smack:</b>
-  <%= @team.smack %>
-</p>
-
-<p>
-  <b>League:</b>
-  <%= @team.league %>
-</p>
-
-<p>
-  <b>Win:</b>
-  <img src="<%= @team.win_img %>"/>
-</p>
-
-<p>
-  <b>Lose:</b>
-  <img src="<%= @team.lose_img %>"/>
-</p>
-
-<p>
-  <b>Trash Talker:</b>
-  <img src="<%= @team.smack_img %>"/>
-</p>
-
+<table>
+<tr>
+<td>
+  <img src="<%= @team.win_img %>" style="height: 300px"/>
+</td>
+<td>
+  <img src="<%= @team.lose_img %>" style="height: 300px"/>
+</td>
+</tr>
+</table>
+</center>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %><% if admin_signed_in? %> |
