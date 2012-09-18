@@ -21,6 +21,11 @@
     <%= f.label :members %><br />
     <%= f.text_field :members %>
   </div>
+  <% else %>
+  <div class="field">
+    <%= f.label :members %><br />
+    <%= f.text_field :members, :disabled => true %>
+  </div>
   <% end %>
 
   <div class="field">
