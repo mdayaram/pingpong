@@ -3,9 +3,9 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
-    @serious = Team.where(:league => "serious")
-    @fun = Team.where(:league => "fun")
-    @doubles = Team.where(:league => "doubles")
+    @serious = Team.where(:league => "serious").order("LOWER(name)")
+    @fun = Team.where(:league => "fun").order("LOWER(name)")
+    @doubles = Team.where(:league => "doubles").order("LOWER(name)")
 
     respond_to do |format|
       format.html # index.html.erb
