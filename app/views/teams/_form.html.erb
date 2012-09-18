@@ -27,6 +27,18 @@
     <%= f.text_field :members, :disabled => true %>
   </div>
   <% end %>
+  
+	<% if admin_signed_in? %>
+  <div class="field">
+    <%= f.label :emails %><br />
+    <%= f.text_field :emails %>
+  </div>
+  <% else %>
+  <div class="field">
+    <%= f.label :emails %><br />
+    <%= f.text_field :emails, :disabled => true %>
+  </div>
+  <% end %>
 
   <div class="field">
     <%= f.label "Smack Talk" %><br />

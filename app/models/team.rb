@@ -1,9 +1,10 @@
 class Team < ActiveRecord::Base
 	before_validation :default_values
-	attr_accessible :bio, :members, :name, :smack, :league
+	attr_accessible :bio, :members, :name, :smack, :league, :emails
 	attr_accessible :lose_img, :win_img, :smack_img
 
 	validates :members, :presence => true
+	validates :emails, :presence => true
 	validates :name, :presence => true
 	validates :bio, :presence => true
 	validates :smack, :presence => true
