@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120918054511) do
+ActiveRecord::Schema.define(:version => 20120918111136) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20120918054511) do
     t.string   "lose_img"
     t.string   "win_img"
     t.string   "smack_img"
+    t.string   "emails"
   end
 
 end
