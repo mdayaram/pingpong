@@ -1,4 +1,6 @@
 Pingpong::Application.routes.draw do
+  resources :matches
+
   devise_for :admins
 
   resources :teams

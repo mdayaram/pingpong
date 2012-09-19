@@ -1,12 +1,15 @@
 class TeamsController < ApplicationController
+  before_filter :authenticate_admin!, :only => [:new, :create, :destroy] 
   # GET /teams
   # GET /teams.json
   def index
-    @teams = Team.all
+    @serious = Team.where(:league => "serious").order("LOWER(name)")
+    @fun = Team.where(:league => "fun").order("LOWER(name)")
+    @doubles = Team.where(:league => "doubles").order("LOWER(name)")
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @teams }
+      format.json { render json: [@serious, @fun, @doules] }
     end
   end
 
@@ -57,6 +60,9 @@ class TeamsController < ApplicationController
   # PUT /teams/1.json
   def update
     @team = Team.find(params[:id])
+    # Don't allow update of members or league.
+    params[:team].delete(:members)
+    params[:team].delete(:league)
 
     respond_to do |format|
       if @team.update_attributes(params[:team])
