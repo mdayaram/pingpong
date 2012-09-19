@@ -61,8 +61,12 @@ class TeamsController < ApplicationController
   def update
     @team = Team.find(params[:id])
     # Don't allow update of members or league.
-    params[:team].delete(:members)
-    params[:team].delete(:league)
+
+    if !admin_signed_in?
+      params[:team].delete(:members)
+      params[:team].delete(:emails)
+      params[:team].delete(:league)
+    end
 
     respond_to do |format|
       if @team.update_attributes(params[:team])
