@@ -1,10 +1,21 @@
 Pingpong::Application.routes.draw do
-  resources :matches
-
   devise_for :admins
 
   resources :teams
-	root :to => "teams#index"
+  root :to => "teams#index"
+
+  resources :matches do
+    collection do
+      get 'serious'
+      get 'serious_wildcard'
+      get 'fun'
+      get 'fun_wildcard'
+      get 'doubles'
+      get 'doubles_wildcard'
+    end
+  end
+
+  resources :matches
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

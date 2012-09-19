@@ -1,14 +1,43 @@
 class MatchesController < ApplicationController
-  # GET /matches
-  # GET /matches.json
+  before_filter :authenticate_admin!, :only => [:new, :edit, :create, :update, :destroy] 
+
   def index
     @matches = Match.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json { render json: @matches }
     end
   end
+
+  def get_bracket(bracket_name)
+    @matches = Match.where(:bracket => bracket_name)
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @matches }
+    end
+  end
+
+  def serious
+    get_bracket("serious")
+  end
+  def serious_wildcard
+    get_bracket("serious_wildcard")
+  end
+  def fun
+    get_bracket("fun")
+  end
+  def fun_wildcard
+    get_bracket("fun_wildcard")
+  end
+  def doubles
+    get_bracket("doubles")
+  end
+  def doubles_wildcard
+    get_bracket("doubles_wildcard")
+  end
+
 
   # GET /matches/1
   # GET /matches/1.json
