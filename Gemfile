@@ -44,5 +44,3 @@ gem 'jquery-rails'
 
 gem 'bootstrap-sass'
 gem 'devise'
-gem 'execjs'
-gem 'therubyracer'
