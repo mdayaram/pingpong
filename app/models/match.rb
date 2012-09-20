@@ -13,13 +13,52 @@ class Match < ActiveRecord::Base
 
   validates :round, :presence => true
 
+  def main_bracket
+    bracket.split("_")[0]
+  end
+
+  def is_final
+    return bracket =~ /_finals/
+  end
+
+  def is_wildcard
+    return bracket =~ /_wildcard/
+  end
+
   def next_winner_match
-    Match.where(:round => winner_next, :bracket => bracket)
+    Match.where(:round => winner_next, :bracket => bracket).first
   end
 
   def next_loser_match
-    unless @bracket =~ /_wildcard/
-      Match.where(:round => loser_next, :bracket => "#{bracket}_wildcard")
+    if !is_wildcard
+      Match.where(:round => loser_next, :bracket => "#{bracket}_wildcard").first
     end
   end
+
+  def has_team(team)
+    return team.id == left_team.id || team.id == right_team.id
+  end
+
+  def get_other_team(team)
+    if !has_team(team)
+      raise "Team is not part of this match!"
+    end
+    if left_team != team
+      return left_team
+    else
+      return right_team
+    end
+  end
+
+  def set_team(team)
+    if left_team.blank?
+      self.left_team = team
+    elsif right_team.blank?
+      self.right_team = team
+    else
+      raise "This match is full! Can't add any more teams to it!"
+    end
+    return self
+  end
 end
+

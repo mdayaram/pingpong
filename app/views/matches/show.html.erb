@@ -1,11 +1,11 @@
 <p>
   <b>Team1:</b>
-  <%= @match.team1 %>
+	<%= @match.left_team.blank? ? "Unknown" : @match.left_team.members %>
 </p>
 
 <p>
   <b>Team2:</b>
-  <%= @match.team2 %>
+  <%= @match.right_team.blank? ? "Unknown" : @match.right_team.members %>
 </p>
 
 <p>
@@ -25,7 +25,7 @@
 
 <p>
   <b>Winner:</b>
-  <%= @match.winner %>
+  <%= @match.win_team.blank? ? "None" : @match.win_team.members %>
 </p>
 
 <p>
@@ -38,6 +38,12 @@
   <%= @match.bracket %>
 </p>
 
+<%= form_for(@match, :url => declare_win_match_path(@match)) do |f| %>
+	<%= select_tag(:winner, options_for_select([
+			[@match.left_team.name, @match.left_team.id],
+			[@match.right_team.name, @match.right_team.id]])) %>
+	<%= f.submit "Select Winner!" %>
+<% end %>
 
 <%= link_to 'Edit', edit_match_path(@match) %> |
 <%= link_to 'Back', matches_path %>

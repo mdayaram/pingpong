@@ -5,6 +5,10 @@ Pingpong::Application.routes.draw do
   root :to => "teams#index"
 
   resources :matches do
+    member do
+      put 'declare_win'
+    end
+
     collection do
       get 'serious'
       get 'serious_wildcard'
