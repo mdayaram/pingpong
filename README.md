@@ -1,7 +1,7 @@
 Moovweb Ping Pong Tournament of 2012!
 ========
 
-# Serious league
+# Serious League
 ```
 1) Tarun v Kenny
                              7) w[1] v w[2]
@@ -26,3 +26,25 @@ Moovweb Ping Pong Tournament of 2012!
 ```
 
 Winner:  `w[11] v w[21]`
+
+
+# Fun League
+```
+```
+
+# Fun Wildcard
+```
+```
+
+Winner: ``
+
+
+# Doubles League
+```
+```
+
+# Doubles Wildcard
+```
+```
+
+Winnner: ``
