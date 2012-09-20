@@ -4,9 +4,11 @@ class Match < ActiveRecord::Base
   has_one :right_team, :class_name => "Team", :foreign_key => "team2"
   has_one :win_team, :class_name => "Team", :foreign_key => "winner"
   has_one :next_match, :class_name => "Match", :foreign_key => "next"
+  has_one :next_loser_match, :class_name => "Match", :foreign_key => "loser_next"
 
   validates :bracket, :inclusion => { 
     :in => %w(serious serious_wildcard fun fun_wildcard doubles doubles_wildcard), 
     :message => "%{value} is not a valid bracket" }
 
+  validates :round, :presence => true
 end
