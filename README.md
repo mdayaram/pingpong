@@ -3,17 +3,17 @@ Moovweb Ping Pong Tournament of 2012!
 
 # Serious League
 ```
-1) Tarun v Kenny --+
-                   |------- 7) w[1] v w[2] -+
-2) Ajay v Stephen -+                        |
+1) Tarun v Kenny -----+
+                      |---- 7) w[1] v w[2] -+
+2) Ajay v Stephen ----+                     |
                                             |---- 10) w[7] v w[8] -+
 3) Hari v David ------+                     |                      |
                       |---- 8) w[3] v w[4] -+                      |
 4) Zhifeng v Anthony -+                                            |---- 11) w[10] v w[9]
                                                                    |
-5) Omar v James -+                                                 |
-                 |--------- 9) w[5] v w[6] ------------------------+
-6) Sean v Mitch -+
+5) Omar v James ------+                                            |
+                      |---- 9) w[5] v w[6] ------------------------+
+6) Sean v Mitch ------+
 ```
 
 # Serious Wildcard
@@ -30,6 +30,23 @@ Winner:  `w[11] v w[21]`
 
 # Fun League
 ```
+1) Dor v Megan ------+
+                     |--- 10) w[1] v w[2] -+
+2) Aaron S. v Brian -+                     |
+                                           |--- 14) w[10] v w[11] -----------------------+
+3) Honie v Josh M. --+                     |                                             |
+                     |--- 11) w[3] v w[4] -+                                             |
+4) Aaron L. v Kevin -+                                                                   |
+                                                                                         |-- 17) w[14] v w[16]
+5) Shane v Naseem ---+                                                                   |
+                     |--- 12) w[5] v w[6] ------------------------+                      |
+6) Carl v Hampton ---+                                            |                      |
+                                                                  |-- 16) w[12] v w[15] -+
+7) Dave Roy v Matt --+                                            |
+                     |--- 13) w[7] v w[8] -+                      |
+8) Phil v Curtis ----+                     |--- 15) w[13] v w[9] -+
+                                           |
+9) Carla v Michelle -----------------------+
 ```
 
 # Fun Wildcard
