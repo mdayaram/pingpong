@@ -17,12 +17,12 @@ Moovweb Ping Pong Tournament of 2012!
 ```
 
 # Serious Wildcard
-
+```
 12) l[1] v l[2]             15) w[12] v l[7]   18) w[15] v l[10]  20) w[18] v l[11]
 
 13) l[3] v l[4]             16) w[13] v l[8]   19) w[16] v w[17]                     21)  w[20] v w[19]
 
 14) l[5] v l[6]             17) w[14] v l[9]
+```
 
-
-Winner:  w[11] v w[21]
+Winner:  `w[11] v w[21]`
