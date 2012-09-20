@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120920074314) do
+ActiveRecord::Schema.define(:version => 20120920090333) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(:version => 20120920074314) do
     t.integer  "winner"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.datetime "schedule"
     t.string   "bracket"
     t.integer  "loser_next"
+    t.datetime "schedule"
   end
 
   create_table "teams", :force => true do |t|
