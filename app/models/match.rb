@@ -8,7 +8,7 @@ class Match < ActiveRecord::Base
   belongs_to :win_team, :class_name => "Team", :foreign_key => "winner"
 
   validates :bracket, :inclusion => { 
-    :in => %w(serious serious_wildcard fun fun_wildcard doubles doubles_wildcard), 
+    :in => %w(serious serious_wildcard serious_finals fun fun_wildcard fun_finals doubles doubles_wildcard doubles_finals),
     :message => "%{value} is not a valid bracket" }
 
   validates :round, :presence => true
