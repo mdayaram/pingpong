@@ -1,17 +1,56 @@
-<p>
-  <b>Team1:</b>
-	<%= @match.left_team.blank? ? "Unknown" : @match.left_team.members %>
-</p>
+<center>
+	<h1><%= @match.bracket.split("_").map(&:capitalize).join(" ") %> :: Match #<%= @match.round %></h1>
 
-<p>
-  <b>Team2:</b>
-  <%= @match.right_team.blank? ? "Unknown" : @match.right_team.members %>
-</p>
+	<%
+		left_name = "Unknown"
+		left_img = "https://dl.dropbox.com/u/9921601/moovweb/pingpong/template.png"
+		if !@match.left_team.blank?
+			left_name = @match.left_team.name
+			left_img = @match.left_team.smack_img
+			if !@match.win_team.blank?
+				if @match.win_team == @match.left_team
+					left_img = @match.left_team.win_img
+				else
+					left_img = @match.left_team.lose_img
+				end
+			end
+		end
 
-<p>
-  <b>Round:</b>
-  <%= @match.round %>
-</p>
+		right_name = "Unknown"
+		right_img = "https://dl.dropbox.com/u/9921601/moovweb/pingpong/template.png"
+		if !@match.right_team.blank?
+			right_name = @match.right_team.name
+			right_img = @match.right_team.smack_img
+			if !@match.win_team.blank?
+				if @match.win_team == @match.right_team
+					right_img = @match.right_team.win_img
+				else
+					right_img = @match.left_team.lose_img
+				end
+			end
+		end
+	%>
+
+	<table width="100%">
+		<tr>
+			<th><%= left_name %></th>
+			<th></th>
+			<th><%= right_name %></th>
+		</tr>
+		<tr>
+			<td align="center" valign="top">
+				<img src="<%= left_img %>" style="height: 350px; width: auto">
+			</td>
+			<td align="center" valign="bottom" width="205px">
+				<img src="https://dl.dropbox.com/u/9921601/moovweb/pingpong/versus.png" style="height: 200px; width: auto">
+			</td>
+			<td align="center" valign="top">
+				<img src="<%= right_img %>" style="height: 350px; width: auto">
+			</td>
+		</tr>
+	</table>
+</center>
+
 
 <p>
   <b>Next:</b>
