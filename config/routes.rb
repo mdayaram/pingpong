@@ -11,11 +11,8 @@ Pingpong::Application.routes.draw do
 
     collection do
       get 'serious'
-      get 'serious_wildcard'
       get 'fun'
-      get 'fun_wildcard'
       get 'doubles'
-      get 'doubles_wildcard'
     end
   end
 
