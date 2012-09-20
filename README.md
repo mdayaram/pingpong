@@ -25,7 +25,7 @@ Moovweb Ping Pong Tournament of 2012!
 14) l[5] v l[6] -- 17) w[14] v l[9] ----------------------+
 ```
 
-### Winner:  `w[11] v w[21]`
+### Winner:  `22) w[11] v w[21]`
 
 
 # Fun League
@@ -60,7 +60,7 @@ Moovweb Ping Pong Tournament of 2012!
 21) l[7] v l[8] -- 25) w[21] v l[12] -- 29) w[25] v l[16] -+
 ```
 
-### Winner: `w[17] v w[33]`
+### Winner: `34) w[17] v w[33]`
 
 
 # Doubles League
@@ -77,5 +77,5 @@ Moovweb Ping Pong Tournament of 2012!
 6) l[1] v l[2] -- 7) w[6] v l[3] -- 8) w[7] v l[4] -- 9) w[8] v l[5]
 ```
 
-### Winnner: `w[5] v w[9]`
+### Winnner: `10) w[5] v w[9]`
 
