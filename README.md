@@ -67,10 +67,16 @@ Moovweb Ping Pong Tournament of 2012!
 
 # Doubles League
 ```
+1) Stephen&Zhifeng v Honie&James -+
+                                  |-- 4) w[1] v w[2] -+
+2) Sean&Megan v Aaron&Kevin ------+                   |-- 5) w[4] v w[3]
+                                                      |
+3) Matt&Noj v Hari&Omar ------------------------------+
 ```
 
 # Doubles Wildcard
 ```
+6) l[1] v l[2] -- 7) w[6] v l[3] -- 8) w[7] v l[4] -- 9) w[8] v l[5]
 ```
 
-### Winnner: ``
+### Winnner: `w[5] v w[9]`
