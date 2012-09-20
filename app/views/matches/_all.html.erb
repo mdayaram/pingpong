@@ -2,13 +2,13 @@
 
 <table cellpadding="10" cellspacing="10">
   <tr>
+    <th>Round</th>
     <th>Team1</th>
     <th>Team2</th>
-    <th>Round</th>
-    <th>Next</th>
-    <th>Loser Next</th>
-    <th>Winner</th>
     <th>Schedule</th>
+    <th>Winner</th>
+    <th>Winner Next</th>
+    <th>Loser Next</th>
     <th>Bracket</th>
     <th></th>
     <th></th>
@@ -17,13 +17,13 @@
 
 <% @matches.each do |match| %>
   <tr>
-		<td><%= match.left_team.nil? ? "Unknown" : match.left_team.members %></td>
-		<td><%= match.right_team.nil? ? "Unknown" : match.right_team.members %></td>
     <td><%= match.round %></td>
-    <td><%= match.next_winner_match.nil? ? "-1" : match.next_winner_match.round %></td>
-    <td><%= match.next_loser_match.nil? ? "-1" : match.next_loser_match.round %></td>
-    <td><%= match.winner %></td>
+		<td><%= match.left_team.blank? ? "Unknown" : match.left_team.members %></td>
+		<td><%= match.right_team.blank? ? "Unknown" : match.right_team.members %></td>
     <td><%= match.schedule %></td>
+    <td><%= match.winner %></td>
+    <td><%= match.winner_next %></td>
+    <td><%= match.loser_next %></td>
     <td><%= match.bracket %></td>
     <td><%= link_to 'Show', match %></td>
     <td><%= link_to 'Edit', edit_match_path(match) %></td>

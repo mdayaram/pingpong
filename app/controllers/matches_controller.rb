@@ -54,7 +54,7 @@ class MatchesController < ApplicationController
   # GET /matches/new.json
   def new
     @match = Match.new
-
+    @teams = Team.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @match }
@@ -63,6 +63,7 @@ class MatchesController < ApplicationController
 
   # GET /matches/1/edit
   def edit
+    @teams = Team.all
     @match = Match.find(params[:id])
   end
 

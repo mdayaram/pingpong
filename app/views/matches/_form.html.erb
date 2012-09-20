@@ -13,19 +13,19 @@
 
   <div class="field">
     <%= f.label :team1 %><br />
-    <%= f.number_field :team1 %>
+    <%= collection_select :match, :team1, @teams, :id, :members, :prompt => true %>
   </div>
   <div class="field">
     <%= f.label :team2 %><br />
-    <%= f.number_field :team2 %>
+    <%= collection_select :match, :team2, @teams, :id, :members, :prompt => true %>
   </div>
   <div class="field">
     <%= f.label :round %><br />
     <%= f.number_field :round %>
   </div>
   <div class="field">
-    <%= f.label :next %><br />
-    <%= f.number_field :next %>
+    <%= f.label :winner_next %><br />
+    <%= f.number_field :winner_next %>
   </div>
   <div class="field">
     <%= f.label :loser_next %><br />
