@@ -13,6 +13,37 @@ class Match < ActiveRecord::Base
 
   validates :round, :presence => true
 
+  def self.round(bracket, num)
+    Match.where(:round => num, :bracket => bracket).first
+  end
+  def self.serious_round(num)
+    Match.round("serious", num)
+  end
+  def self.fun_round(num)
+    Match.round("fun", num)
+  end
+  def self.doubles_round(num)
+    Match.round("doubles", num)
+  end
+  def self.serious_wildcard_round(num)
+    Match.round("serious_wildcard", num)
+  end
+  def self.fun_wildcard_round(num)
+    Match.round("fun_wildcard", num)
+  end
+  def self.doubles_wildcard_round(num)
+    Match.round("doubles_wildcard", num)
+  end
+  def self.serious_final
+    Match.round("serious_final", num)
+  end
+  def self.fun_final
+    Match.round("fun_final", num)
+  end
+  def self.doubles_final
+    Match.round("doubles_final", num)
+  end
+
   def main_bracket
     bracket.split("_")[0]
   end
