@@ -3,7 +3,7 @@ class MatchesController < ApplicationController
 
 ### Helpers
   def get_bracket(bracket_name)
-    ms = Match.where(:bracket => [bracket_name, bracket_name + "_wildcard", bracket_name + "_finals")
+    ms = Match.where(:bracket => [bracket_name, "#{bracket_name}_wildcard", "#{bracket_name}_finals")
     @matches = Hash.new
     ms.each do |m|
        @matches[m.round] = m
