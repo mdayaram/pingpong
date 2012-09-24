@@ -4,7 +4,7 @@
 	left_name = "Unknown"
 	left_img = "https://dl.dropbox.com/u/9921601/moovweb/pingpong/template.png"
 	if !@match.left_team.blank?
-		left_name = @match.left_team.name
+		left_name = link_to @match.left_team.name, team_path(@match.left_team)
 		left_img = @match.left_team.smack_img
 		if !@match.win_team.blank?
 			if @match.win_team == @match.left_team
@@ -18,7 +18,7 @@
 	right_name = "Unknown"
 	right_img = "https://dl.dropbox.com/u/9921601/moovweb/pingpong/template.png"
 	if !@match.right_team.blank?
-		right_name = @match.right_team.name
+		right_name = link_to @match.right_team.name, team_path(@match.right_team)
 		right_img = @match.right_team.smack_img
 		if !@match.win_team.blank?
 			if @match.win_team == @match.right_team
@@ -81,7 +81,7 @@
 <% else %>
 	<div>
 		Played at:
-		<%= @match.schedule %>
+		<%= @match.schedule.strftime("%m/%d/%Y @ %I:%M:%S %p") %>
 	</div>
 <% end %>
 </div>
@@ -103,6 +103,8 @@
 		</div>
 	<% end %>
 <% end %>
+
+<br/><br/>
 
 <% if admin_signed_in? %>
 <%= link_to 'Edit', edit_match_path(@match) %> |
