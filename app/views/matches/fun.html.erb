@@ -1,23 +1,31 @@
 <h1>Fun Bracket</h1>
 
 <div class="bracket">
-1) Dor v Megan ------+
-                     |-- 10) w[1] v w[2] -+
-2) Aaron S. v Brian -+                    |
-                                          |-- 14) w[10] v w[11] ----------------------+
-3) Honie v Josh M. --+                    |                                            |
-                     |-- 11) w[3] v w[4] -+                                            |
-4) Aaron L. v Kevin -+                                                                 |
-                                                                                       |-- 17) w[14] v w[16]
-5) Shane v Naseem ---+                                                                 |
-                     |-- 12) w[5] v w[6] -----------------------+                      |
-6) Carl v Hampton ---+                                          |                      |
-                                                                |-- 16) w[12] v w[15] -+
-7) Dave Roy v Matt --+                                          |
-                     |-- 13) w[7] v w[8] -+                     |
-8) Phil v Curtis ----+                    |-- 15) w[13] v w[9] -+
-                                          |
-9) Carla v Michelle ----------------------+
+<table cellpadding="10" cellspacing="10">
+<tr><td>
+1) <%= bracket_match(@matches[1], "-", "-") %><br/>
+2) <%= bracket_match(@matches[2], "-", "-") %><br/>
+3) <%= bracket_match(@matches[3], "-", "-") %><br/>
+4) <%= bracket_match(@matches[4], "-", "-") %><br/>
+5) <%= bracket_match(@matches[5], "-", "-") %><br/>
+6) <%= bracket_match(@matches[6], "-", "-") %><br/>
+7) <%= bracket_match(@matches[7], "-", "-") %><br/>
+8) <%= bracket_match(@matches[8], "-", "-") %><br/>
+9) <%= bracket_match(@matches[9], "-", "-") %><br/>
+</td><td>
+10) <%= bracket_match(@matches[10], "w[1]", "w[2]") %><br/>
+11) <%= bracket_match(@matches[11], "w[3]", "w[4]") %><br/>
+12) <%= bracket_match(@matches[12], "w[5]", "w[6]") %><br/>
+13) <%= bracket_match(@matches[13], "w[7]", "w[8]") %><br/>
+</td><td>
+14) <%= bracket_match(@matches[14], "w[10]", "w[11]") %><br/>
+15) <%= bracket_match(@matches[15], "w[13]", "w[9]") %><br/>
+</td><td>
+16) <%= bracket_match(@matches[16], "w[12]", "w[15]") %><br/>
+</td><td>
+17) <%= bracket_match(@matches[17], "w[14]", "w[16]") %><br/>
+</td></tr>
+</table>
 </div>
 
 <br>
@@ -25,17 +33,41 @@
 <h1>Fun Wildcard</h1>
 
 <div class="bracket">
-18) l[1] v l[2] -- 22) w[18] v l[9] --- 26) w[22] v l[13] -- 30) w[26] v l[17] -+
-                                                                                |-- 32) w[30] v w[27] -+
-19) l[3] v l[4] -- 23) w[19] v l[10] -- 27) w[23] v l[14] ----------------------+                      |
-                                                                                                       |-- 33) w[32] v w[31]
-20) l[5] v l[6] -- 24) w[20] v l[11] -- 28) w[24] v l[15] -+                                           |
-                                                           |-- 31) w[28] v w[29] ----------------------+
-21) l[7] v l[8] -- 25) w[21] v l[12] -- 29) w[25] v l[16] -+
+<table cellpadding="10" cellspacing="10">
+<tr><td>
+18) <%= bracket_match(@matches[18], "l[1]", "l[2]") %><br/>
+19) <%= bracket_match(@matches[19], "l[3]", "l[4]") %><br/>
+20) <%= bracket_match(@matches[20], "l[5]", "l[6]") %><br/>
+21) <%= bracket_match(@matches[21], "l[7]", "l[8]") %><br/>
+</td><td>
+22) <%= bracket_match(@matches[22], "w[18]", "l[9]") %><br/>
+23) <%= bracket_match(@matches[23], "w[19]", "l[10]") %><br/>
+24) <%= bracket_match(@matches[24], "w[20]", "l[11]") %><br/>
+25) <%= bracket_match(@matches[25], "w[21]", "l[12]") %><br/>
+</td><td>
+26) <%= bracket_match(@matches[26], "w[22]", "l[13]") %><br/>
+27) <%= bracket_match(@matches[27], "w[23]", "l[14]") %><br/>
+28) <%= bracket_match(@matches[28], "w[24]", "l[15]") %><br/>
+29) <%= bracket_match(@matches[29], "w[25]", "l[16]") %><br/>
+</td><td>
+30) <%= bracket_match(@matches[30], "w[26]", "l[17]") %><br/>
+31) <%= bracket_match(@matches[31], "w[28]", "w[29]") %><br/>
+</td><td>
+32) <%= bracket_match(@matches[32], "w[30]", "w[27]") %><br/>
+</td><td>
+33) <%= bracket_match(@matches[33], "w[32]", "w[31]") %><br/>
+</td></tr>
+</table>
 </div>
 
 <br>
 
 <h1>Finals</h1>
 
-<div class="bracket">34) w[17] v w[33]</div>
+<div class="bracket">
+<table cellpadding="10" cellspacing="10">
+<tr><td>
+34) <%= bracket_match(@matches[34], "w[17]", "w[33]") %><br/>
+</td></tr>
+</table>
+</div>
