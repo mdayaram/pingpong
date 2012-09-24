@@ -1,8 +1,8 @@
 <h1>Serious Bracket</h1>
 
 <div class="bracket">
-<br>1) <%= bracket_match(@matches[1], "w", 0, "l", 0) %>-----+
-<br>                      |-- 7) w[1] v w[2] -+
+<br>1) <%= bracket_match(@matches[1], "-", "-") %>-----+
+<br>                      |-- 7) <%= bracket_match(@matches[7], "w[1]", "w[2]") -+
 <br>2) Ajay v Stephen ----+                   |
 <br>                                          |-- 10) w[7] v w[8] -+
 <br>3) Hari v David ------+                   |                    |
