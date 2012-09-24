@@ -33,14 +33,14 @@
 <div class="match-wrap">
 	<div class="match-bg"></div>
 	<div class="match-front">
-		<div style="width: 50%; float: right;">
-			<div class="match-team">
+		<div style="width: 50%; float: left;">
+			<div class="match-team match-team-left">
 				<img src="<%= left_img %>"><br/>
 				<%= left_name %>
 			</div>
 		</div>
-		<div style="width: 50%; float: left;">
-			<div class="match-team">
+		<div style="width: 50%; float: right;">
+			<div class="match-team match-team-right">
 				<img src="<%= right_img %>"><br/>
 				<%= right_name %>
 			</div>
@@ -64,17 +64,17 @@
 
 <div>
   Winner?:
-  <%= @match.win_team.blank? ? "None yet!" : @match.win_team.members %>
+  <%= @match.win_team.blank? ? "None yet!" : @match.win_team.name %>
 </div>
 
 <div class="match-schedule">
 	<%= form_for(@match, :url => set_schedule_match_path(@match)) do |f| %>
 		<div class="field">
-			<%= f.label "Scheduled at:" %><br/>
+			<%= f.label "Scheduled for:" %><br/>
 			<%= f.datetime_select :schedule %>
 		</div>
 		<div class="actions">
-			<%= f.submit %>
+			<%= f.submit "Set Match Date"%>
 		</div>
 	<% end %>
 </div>
