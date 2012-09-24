@@ -77,6 +77,7 @@
 
 <% if !@match.left_team.blank? and !@match.right_team.blank? %>
 
+<%= if @match.win_team.blank? or admin_signed_in? %>
 <div class="match-declare-winner">
 <%= form_for(@match, :url => declare_win_match_path(@match)) do |f| %>
 	<div class="field">
@@ -89,6 +90,7 @@
 	</div>
 <% end %>
 </div>
+<% end %>
 <% end %>
 
 <%= link_to 'Edit', edit_match_path(@match) %> |
