@@ -3,7 +3,11 @@ class MatchesController < ApplicationController
 
 ### Helpers
   def get_bracket(bracket_name)
-    @matches = Match.where(:bracket => bracket_name)
+    ms = Match.where(:bracket => bracket_name)
+    @matches = Hash.new
+    ms.each do |m|
+       @matches[m.round] = m
+    end
 
     respond_to do |format|
       format.html

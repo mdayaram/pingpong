@@ -35,13 +35,13 @@ class Match < ActiveRecord::Base
     Match.round("doubles_wildcard", num)
   end
   def self.serious_final
-    Match.round("serious_final", num)
+    Match.where(:bracket => "serious_final")
   end
   def self.fun_final
-    Match.round("fun_final", num)
+    Match.where(:bracket => "fun_final")
   end
   def self.doubles_final
-    Match.round("doubles_final", num)
+    Match.where(:bracket => "doubles_final")
   end
 
   def main_bracket
