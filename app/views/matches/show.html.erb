@@ -65,11 +65,6 @@
   <%= @match.schedule %>
 </p>
 
-<p>
-  <b>Bracket:</b>
-  <%= @match.bracket %>
-</p>
-
 <% if !@match.left_team.blank? and !@match.right_team.blank? %>
 <%= form_for(@match, :url => declare_win_match_path(@match)) do |f| %>
 	<%= select_tag(:winner, options_for_select([
