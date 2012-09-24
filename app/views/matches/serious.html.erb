@@ -26,14 +26,32 @@
 <h1>Serious Wildcard</h1>
 
 <div class="bracket">
-<br>12) l[1] v l[2] -- 15) w[12] v l[7] -- 18) w[15] v l[10] ------------------------+
-<br>                                                                                 |-- 21) w[18] v w[19]
-<br>13) l[3] v l[4] -- 16) w[13] v l[8] -- 19) w[16] v l[11] -+                      |
-<br>                                                          |-- 20) w[17] v w[19] -+
-<br>14) l[5] v l[6] -- 17) w[14] v l[9] ----------------------+
+<table cellpadding="10" cellspacing="10">
+<tr><td>
+12) <%= bracket_match(@matches[12], "l[1]", "l[2]") %><br/>
+13) <%= bracket_match(@matches[13], "l[3]", "l[4]") %><br/>
+14) <%= bracket_match(@matches[14], "l[5]", "l[6]") %><br/>
+</td><td>
+15) <%= bracket_match(@matches[15], "w[12]", "l[7]") %><br/>
+16) <%= bracket_match(@matches[16], "w[13]", "l[8]") %><br/>
+17) <%= bracket_match(@matches[17], "w[14]", "l[9]") %><br/>
+</td><td>
+18) <%= bracket_match(@matches[18], "w[15]", "l[10]") %><br/>
+19) <%= bracket_match(@matches[19], "w[16]", "l[11]") %><br/>
+</td><td>
+20) <%= bracket_match(@matches[19], "w[17]", "l[19]") %><br/>
+</td><td>
+21) <%= bracket_match(@matches[21], "w[18]", "w[20]") %><br/>
+</td></tr>
+</table>
 </div>
 
 <br>
 
 <h1>Finals</h1>
-<div class="bracket">22) w[11] v w[21]</div>
+<div class="bracket">
+<table cellpadding="0" cellspacing="0">
+<tr><td>
+22) w[11] v w[21]
+</td></tr>
+</div>
