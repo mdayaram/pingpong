@@ -1,11 +1,17 @@
 <h1>Doubles Bracket</h1>
 
 <div class="bracket">
-1) Stephen&Zhifeng v Honie&James -+
-                                  |-- 4) w[1] v w[2] -+
-2) Sean&Megan v Aaron&Kevin ------+                   |-- 5) w[4] v w[3]
-                                                      |
-3) Matt&Noj v Hari&Omar ------------------------------+
+<table cellpadding="10" cellspacing="10">
+<tr><td>
+1) <%= bracket_match(@matches[1], "-", "-") %><br/>
+2) <%= bracket_match(@matches[2], "-", "-") %><br/>
+3) <%= bracket_match(@matches[3], "-", "-") %><br/>
+</td><td>
+4) <%= bracket_match(@matches[4], "w[1]", "w[2]") %><br/>
+</td><td>
+5) <%= bracket_match(@matches[5], "w[4]", "w[3]") %><br/>
+</td></tr>
+</table>
 </div>
 
 <br>
@@ -13,10 +19,25 @@
 <h1>Doubles Wildcard</h1>
 
 <div class="bracket">
-6) l[1] v l[2] -- 7) w[6] v l[3] -- 8) w[7] v l[4] -- 9) w[8] v l[5]
+<table cellpadding="10" cellspacing="10">
+<tr><td>
+6) <%= bracket_match(@matches[6], "l[1]", "l[2]") %><br/>
+</td><td>
+7) <%= bracket_match(@matches[7], "w[6]", "l[3]") %><br/>
+</td><td>
+8) <%= bracket_match(@matches[8], "w[7]", "l[4]") %><br/>
+</td><td>
+9) <%= bracket_match(@matches[9], "w[8]", "l[5]") %><br/>
+</td></tr>
+</table>
 </div>
 
 <br>
 
 <h1>Finals</h1>
-<div class="bracket">10) w[5] v w[9]</div>
+<div class="bracket">
+<table cellpadding="10" cellspacing="10">
+<tr><td>
+10) <%= bracket_match(@matches[10], "w[5]", "w[9]") %><br/>
+</td></tr>
+</div>
