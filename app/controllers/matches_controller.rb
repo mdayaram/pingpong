@@ -55,6 +55,28 @@ class MatchesController < ApplicationController
       format.json { render json: @match }
     end
   end
+ 
+  def set_schedule
+    @match = Match.find(params[:id])
+		if @match.blank?
+			raise "Invalid match id."
+		end
+
+		if params[:schedule].blank?
+			raise "Invalid time selected for match's schedule."
+		end
+		
+		@match.schedule = params[:schedule]
+    respond_to do |format|
+      if @match.save
+        format.html { redirect_to @match, notice: 'Match was successfully created.' }
+        format.json { render json: @match, status: :created, location: @match }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @match.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   def declare_win
     @match = Match.find(params[:id])
