@@ -7,6 +7,7 @@ Pingpong::Application.routes.draw do
   resources :matches do
     member do
       put 'declare_win'
+      put 'set_schedule'
     end
 
     collection do
