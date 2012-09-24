@@ -44,26 +44,29 @@
 	</div>
 </div>
 
-
+<% if !@match.winner_next.blank? %>
 <div>
-  <b>Next:</b>
-  <%= @match.winner_next %>
+  <b>Next Match for the Winner:</b>
+  <%= link_to "Bring it!", match_path(@match.next_winner_match) %>
 </div>
+<% end %>
 
+<% if !@match.loser_next.blank? %>
 <div>
-  <b>Loser Next:</b>
-  <%= @match.loser_next %>
+  <b>Next Match for the Loser:</b>
+  <%= link_to "It's not over yet!", match_path(@match.next_loser_match) %>
 </div>
+<% end %>
 
 <div>
-  <b>Winner:</b>
-  <%= @match.win_team.blank? ? "None" : @match.win_team.members %>
+  <b>Winner?:</b>
+  <%= @match.win_team.blank? ? "None yet!" : @match.win_team.members %>
 </div>
 
 <div class="match-schedule">
 	<%= form_for(@match, :url => set_schedule_match_path(@match)) do |f| %>
 		<div class="field">
-			<b><%= f.label "Scheduled at" %></b><br/>
+			<%= f.label "<b>Scheduled at</b>" %><br/>
 			<%= f.datetime_select :schedule %>
 		</div>
 	<% end %>
