@@ -76,21 +76,21 @@
 </div>
 
 <% if !@match.left_team.blank? and !@match.right_team.blank? %>
-
-<%= if @match.win_team.blank? or admin_signed_in? %>
-<div class="match-declare-winner">
-<%= form_for(@match, :url => declare_win_match_path(@match)) do |f| %>
-	<div class="field">
-	<%= select_tag(:winner, options_for_select([
-			[@match.left_team.name, @match.left_team.id],
-			[@match.right_team.name, @match.right_team.id]])) %>
-	</div>
-	<div class="actions">
-		<%= f.submit "Select Winner!" %>
-	</div>
-<% end %>
-</div>
-<% end %>
+	<%= if @match.win_team.blank? or admin_signed_in? %>
+		<div class="match-declare-winner">
+		<%= form_for(@match, :url => declare_win_match_path(@match)) do |f| %>
+			<div class="field">
+			<%= f.label "Select a Winner!" %><br/>
+			<%= select_tag(:winner, options_for_select([
+					[@match.left_team.name, @match.left_team.id],
+					[@match.right_team.name, @match.right_team.id]])) %>
+			</div>
+			<div class="actions">
+				<%= f.submit "Select Winner!" %>
+			</div>
+		<% end %>
+		</div>
+	<% end %>
 <% end %>
 
 <%= link_to 'Edit', edit_match_path(@match) %> |
