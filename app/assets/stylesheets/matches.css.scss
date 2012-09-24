@@ -14,3 +14,31 @@
 .bracket table tr td {
 	font-family: Monospace;
 }
+
+.match-wrap {
+	position: relative;
+}
+
+.match-bg {
+	background-repeat: no-repeat;
+	background-image: url('https://dl.dropbox.com/u/9921601/moovweb/pingpong/versus.png');
+	background-position: center;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 350px;
+}
+
+.match-front {
+	width: 100%;
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.match-team {
+	display: inline-block;
+	border: 1px solid black;
+	height: 350px;
+}
