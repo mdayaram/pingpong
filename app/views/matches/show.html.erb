@@ -68,6 +68,7 @@
 </div>
 
 <div class="match-schedule">
+<% if @match.win_team.blank? %>
 	<%= form_for(@match, :url => set_schedule_match_path(@match)) do |f| %>
 		<div class="field">
 			<%= f.label "Scheduled for:" %><br/>
@@ -77,6 +78,12 @@
 			<%= f.submit "Set Match Date"%>
 		</div>
 	<% end %>
+<% else %>
+	<div>
+		Played at:
+		<%= @match.schedule %>
+	</div>
+<% end %>
 </div>
 
 <% if !@match.left_team.blank? and !@match.right_team.blank? %>
@@ -97,5 +104,7 @@
 	<% end %>
 <% end %>
 
+<% if admin_signed_in? %>
 <%= link_to 'Edit', edit_match_path(@match) %> |
+<% end %>
 <%= link_to 'Back', matches_path %>
