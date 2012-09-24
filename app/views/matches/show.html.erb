@@ -77,11 +77,13 @@
   <%= @match.bracket %>
 </p>
 
+<%= if !@match.left_team.blank? and !@match.right_team.blank? %>
 <%= form_for(@match, :url => declare_win_match_path(@match)) do |f| %>
 	<%= select_tag(:winner, options_for_select([
 			[@match.left_team.name, @match.left_team.id],
 			[@match.right_team.name, @match.right_team.id]])) %>
 	<%= f.submit "Select Winner!" %>
+<% end %>
 <% end %>
 
 <%= link_to 'Edit', edit_match_path(@match) %> |
