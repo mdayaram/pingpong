@@ -61,7 +61,7 @@
 </div>
 
 <div class="match-schedule">
-	<%= form_for(@match, :url => set_schedule(@match)) do |f| %>
+	<%= form_for(@match, :url => set_schedule_match_path(@match)) do |f| %>
 		<div class="field">
 			<%= f.label "Scheduled at" %><br/>
 			<%= f.datetime_select :schedule %>
