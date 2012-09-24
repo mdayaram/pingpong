@@ -71,7 +71,7 @@ class MatchesController < ApplicationController
         format.html { redirect_to @match, notice: 'Match schedule successfully update.' }
         format.json { render json: @match, status: :created, location: @match }
       else
-        format.html { redirect_to @match, error: "Failed to set match to scheduled time."} }
+        format.html { redirect_to @match, error: "Failed to set match to scheduled time." }
         format.json { render json: @match.errors, status: :unprocessable_entity }
       end
     end
