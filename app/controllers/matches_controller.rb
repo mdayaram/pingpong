@@ -66,13 +66,12 @@ class MatchesController < ApplicationController
 			raise "Invalid time selected for match's schedule."
 		end
 		
-		@match.schedule = params[:schedule]
     respond_to do |format|
-      if @match.save
-        format.html { redirect_to @match, notice: 'Match was successfully created.' }
+      if @match.update_attributes(:schedule => params[:schedule])
+        format.html { redirect_to @match, notice: 'Match schedule successfully update.' }
         format.json { render json: @match, status: :created, location: @match }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to @match, error: "Failed to set match to scheduled time."} }
         format.json { render json: @match.errors, status: :unprocessable_entity }
       end
     end

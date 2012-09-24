@@ -69,11 +69,14 @@
 			<%= f.label "<b>Scheduled at</b>" %><br/>
 			<%= f.datetime_select :schedule %>
 		</div>
+		<div class="actions">
+			<%= f.submit %>
+		</div>
 	<% end %>
-  <%= @match.schedule %>
 </div>
 
 <% if !@match.left_team.blank? and !@match.right_team.blank? %>
+
 <div class="match-declare-winner">
 <%= form_for(@match, :url => declare_win_match_path(@match)) do |f| %>
 	<div class="field">
