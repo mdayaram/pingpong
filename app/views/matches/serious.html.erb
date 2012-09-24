@@ -1,17 +1,25 @@
 <h1>Serious Bracket</h1>
 
 <div class="bracket">
-<br>1) <%= bracket_match(@matches[1], "-", "-") %>-----+
-<br>                      |-- 7) <%= bracket_match(@matches[7], "w[1]", "w[2]") %>-+
-<br>2) Ajay v Stephen ----+                   |
-<br>                                          |-- 10) w[7] v w[8] -+
-<br>3) Hari v David ------+                   |                    |
-<br>                      |-- 8) w[3] v w[4] -+                    |
-<br>4) Zhifeng v Anthony -+                                        |-- 11) w[10] v w[9]
-<br>                                                               |
-<br>5) Omar v James ------+                                        |
-<br>                      |-- 9) w[5] v w[6] ----------------------+
-<br>6) Sean v Mitch ------+
+<div class="round">
+<br>1) <%= bracket_match(@matches[1], "-", "-") %>
+<br>2) <%= bracket_match(@matches[2], "-", "-") %>
+<br>3) <%= bracket_match(@matches[3], "-", "-") %>
+<br>4) <%= bracket_match(@matches[4], "-", "-") %>
+<br>5) <%= bracket_match(@matches[5], "-", "-") %>
+<br>6) <%= bracket_match(@matches[6], "-", "-") %>
+</div>
+<div class="round">
+7) <%= bracket_match(@matches[7], "w[1]", "w[2]") %><br/>
+8) <%= bracket_match(@matches[8], "w[3]", "w[4]") %><br/>
+9) <%= bracket_match(@matches[9], "w[5]", "w[6]") %><br/>
+</div>
+<div class="round">
+10) <%= bracket_match(@matches[10], "w[7]", "w[8]") %><br/>
+</div>
+<div class="round">
+10) <%= bracket_match(@matches[11], "w[10]", "w[9]") %><br/>
+</div>
 </div>
 
 <br>
