@@ -27,7 +27,8 @@ class MatchesController < ApplicationController
 
   def all
     respond_to do |format|
-    format.html
+      format.html
+    end
   end
 
   def serious
