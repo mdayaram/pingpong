@@ -48,14 +48,14 @@
 	</div>
 </div>
 
-<% if !@match.winner_next.blank? %>
+<% if !@match.next_winner_match.blank? %>
 <div>
   Next Match for the Winner:
   <%= link_to "Bring it!", match_path(@match.next_winner_match) %>
 </div>
 <% end %>
 
-<% if !@match.loser_next.blank? %>
+<% if !@match.next_loser_match.blank? %>
 <div>
   Next Match for the Loser:
   <%= link_to "It's not over yet!", match_path(@match.next_loser_match) %>
