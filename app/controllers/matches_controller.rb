@@ -25,6 +25,11 @@ class MatchesController < ApplicationController
     end
   end
 
+  def all
+    respond_to do |format|
+    format.html
+  end
+
   def serious
     get_bracket("serious")
   end

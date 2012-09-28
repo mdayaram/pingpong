@@ -11,6 +11,7 @@ Pingpong::Application.routes.draw do
     end
 
     collection do
+      get 'all'
       get 'serious'
       get 'fun'
       get 'doubles'
