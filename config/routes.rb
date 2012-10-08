@@ -21,5 +21,6 @@ Pingpong::Application.routes.draw do
   resources :matches
 
 	get 'rules' => 'rules#index'
+	get 'prizes' => 'prizes#index'
 
 end
