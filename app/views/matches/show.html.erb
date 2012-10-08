@@ -67,6 +67,7 @@
   <%= @match.win_team.blank? ? "None yet!" : @match.win_team.name %>
 </div>
 
+<!--
 <div class="match-schedule">
 <% if @match.win_team.blank? %>
 	<%= form_for(@match, :url => set_schedule_match_path(@match)) do |f| %>
@@ -85,6 +86,7 @@
 	</div>
 <% end %>
 </div>
+-->
 
 <% if !@match.left_team.blank? and !@match.right_team.blank? %>
 	<% if @match.win_team.blank? %>
